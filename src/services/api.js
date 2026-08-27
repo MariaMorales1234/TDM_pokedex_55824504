@@ -5,7 +5,7 @@ const API_URL = "https://pokeapi.co/api/v2/pokemon/";
 export async function fetchPokemon(id) {
     try {
         const res = await fetch(API_URL + id);
-        if (!RegExp.ok) throw new Error("No se encontro el Pokemon");
+        if (!res.ok) throw new Error("No se encontro el Pokemon");
         const data = await res.json();
 
         const types = data.types.map(t => t.type.name);

@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Quicksand", sans-serif;
+    background: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.card {
+    width: 100%;
+    max-width: 360px;
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+.card-container {
+    padding: 32px 24px;
+    text-align: center;
+    transition: background 0.4s ease;
+}
+
+#pokemon-img {
+    width: 300px;
+    height: 300px;
+    margin: 16px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover #pokemon-img {
+    transform: scale(1.03);
+}
+
+#pokemon-name {
+    font-size: 30px;
+    font-weight: 800;
+    margin: 5px;
+}
+
+#pokemon-id {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 5px;
+}
+
+.types {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.types .type {
+    padding: 6px 18px;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.button {
+    display: flex;
+    gap: 12px;
+    padding: 0 24px;
+    justify-content: center;
+}
+
+.button button{
+    padding: 12px 16px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+    background: #333333;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.button button:hover {
+    background: #ffffff;
+    color: #000000;
+    border: 3px solid #333333;
+}
+
+.button button:active {
+    transform: translateY(0) scale(0.97);
+}
+/*Degrado por tipo*/
+.card.type-normal   { background: linear-gradient(180deg, #bdbdbd 0%, #ffffff 100%); }
+.card.type-electric { background: linear-gradient(180deg, #f7d02c 0%, #ffffff 100%); }
+.card.type-fire     { background: linear-gradient(180deg, #ee8130 0%, #ffffff 100%); }
+.card.type-ground   { background: linear-gradient(180deg, #833900 0%, #ffffff 100%); }
+.card.type-rock     { background: linear-gradient(180deg, #e9d45f 0%, #ffffff 100%); }
+.card.type-water    { background: linear-gradient(180deg, #6390f0 0%, #ffffff 100%); }
+.card.type-grass    { background: linear-gradient(180deg, #7ac74c 0%, #ffffff 100%); }
+.card.type-bug      { background: linear-gradient(180deg, #729f3f 0%, #ffffff 100%); }
+.card.type-flying   { background: linear-gradient(180deg, #3dc7ef 0%, #ffffff 100%); }
+.card.type-ice      { background: linear-gradient(180deg, #9be9ff 0%, #ffffff 100%); }
+.card.type-poison   { background: linear-gradient(180deg, #9e0a72 0%, #ffffff 100%); }
+.card.type-fairy    { background: linear-gradient(180deg, #ff87db 0%, #ffffff 100%); }
+.card.type-fighting { background: linear-gradient(180deg, #d33333 0%, #ffffff 100%); }
+.card.type-psychic  { background: linear-gradient(180deg, #aa0080 0%, #ffffff 100%); }
+.card.type-steel    { background: linear-gradient(180deg, #616161 0%, #ffffff 100%); }
+.card.type-ghost    { background: linear-gradient(180deg, #313d70 0%, #ffffff 100%); }
+.card.type-dark     { background: linear-gradient(180deg, #222222 0%, #ffffff 100%); }
+.card.type-dragon   { background: linear-gradient(180deg, #3f23bb 0%, #ffffff 100%); }
+
+/*colores de type*/
+.type.normal   { background: #bdbdbd; color: #000000; }
+.type.electric { background: #f7d02c; color: #000000; }
+.type.fire     { background: #ee8130; }
+.type.ground   { background: #833900; }
+.type.rock     { background: #e9d45f; color: #000000; }
+.type.water    { background: #6390f0; }
+.type.grass    { background: #7ac74c; }
+.type.bug      { background: #729f3f; }
+.type.flying   { background: #3dc7ef; }
+.type.ice      { background: #9be9ff; color: #000000; }
+.type.poison   { background: #9e0a72; }
+.type.fairy    { background: #ff87db; }
+.type.fighting { background: #d33333; }
+.type.psychic  { background: #aa0080; }
+.type.steel    { background: #616161; }
+.type.ghost    { background: #313d70; }
+.type.dark     { background: #222222; }
+.type.dragon   { background: #3f23bb; }
