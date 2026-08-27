@@ -1,6 +1,14 @@
 export function showPokemon (pokemon) {
     if (!pokemon) return;
 
+    const primaryType = pokemon.types[0];
+
+    const oldClasses = Array.from(document.body.classList).filter(c => c.startsWith("type-"));
+    oldClasses.forEach(c => document.body.classList.remove(c));
+
+    // Agregar nueva clase al body para cambiar el fondo de la página
+    document.body.classList.add("type-" + primaryType);
+
     document.getElementById("pokemon-img").src = pokemon.sprite;
     document.getElementById("pokemon-name").textContent = capitalize(pokemon.name);
     document.getElementById("pokemon-id").textContent = "#" + pokemon.id.toString().padStart(3, "0");
