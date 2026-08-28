@@ -34,6 +34,7 @@ body.type-ghost    { background: linear-gradient(180deg, #313d70 0%, #ffffff 100
 body.type-dark     { background: linear-gradient(180deg, #222222 0%, #ffffff 100%); }
 body.type-dragon   { background: linear-gradient(180deg, #3f23bb 0%, #ffffff 100%); }
 
+/*estilos card*/
 .card {
     width: 100%;
     max-width: 360px;
@@ -140,6 +141,7 @@ body.type-dragon   { background: linear-gradient(180deg, #3f23bb 0%, #ffffff 100
     transform: translateY(0) scale(0.97);
 }
 
+/*estilos modal*/
 .modal {
     position: fixed;
     top: 0;
@@ -223,6 +225,7 @@ body.type-dragon   { background: linear-gradient(180deg, #3f23bb 0%, #ffffff 100
     color: #000000;
 }
 
+/*estilos estadisticas*/
 .modal-stats h3 {
     font-size: 15px;
     font-weight: 700;
