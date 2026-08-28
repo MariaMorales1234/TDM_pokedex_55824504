@@ -1,5 +1,5 @@
 import { fetchPokemon } from "./services/api.js";
-import { showPokemon } from "./ui/ui.js";
+import { showModal, setUpModal, showPokemon } from "./ui/ui.js";
 
 let current = 677;
 
@@ -9,6 +9,7 @@ async function loadPokemon(id) {
 }
 
 loadPokemon(current);
+setUpModal();
 
 document.querySelector(".next").addEventListener("click", () => {
     current ++;

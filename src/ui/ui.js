@@ -1,3 +1,12 @@
+const STAT_NAMES = {
+    hp: "HP",
+    attack: "Ataque",
+    defense: "Defensa",
+    "special-attack": "Atq. Esp.",
+    "special-defense": "Def. Esp.",
+    speed: "Velocidad"
+};
+
 export function showPokemon (pokemon) {
     if (!pokemon) return;
 
@@ -21,8 +30,51 @@ export function showPokemon (pokemon) {
         span.textContent = capitalize(t);
         typesDiv.appendChild(span);
     });
+
+    document.querySelector("#pokemon-img").onclick = () => showModal(pokemon);
 }
 
 function capitalize(word) {
     return word.charAt(0).toUpperCase() + word.slice(1);
 }
+
+export function showModal(pokemon){
+    const modal = document.getElementById("pokemon-modal");
+
+    document.getElementById("modal-name").textContent = capitalize(pokemon.name);
+    document.getElementById("modal-img").src = pokemon.sprite;
+    document.getElementById("modal-id").textContent = "#" + pokemon.id.toString().padStart(3, "0");
+    document.getElementById("modal-height").textContent = (pokemon.height / 10) + "m";
+    document.getElementById("modal-weight").textContent = (pokemon.weight / 10) + "kg";
+    document.getElementById("modal-abilities").textContent = pokemon.abilities.join(", ");
+
+    const statsDiv = document.getElementById("modal-stats");
+    statsDiv.innerHTML = "<h3>Estadísticas</h3>";
+    pokemon.stats.forEach(s => {
+        const name = s.stat;
+        const value = s.base;
+        const label = STAT_NAMES[name] || name;
+
+        const row = document.createElement("div");
+        row.className = "stat-row";
+        row.innerHTML = `
+            <span class="stat-label">${label}</span>
+            <div class="stat-bar-bg">
+                <div class="stat-bar-fill" style="width: ${Math.min(value, 100)}%"></div>
+            </div>
+            <span class="stat-value">${value}</span>
+        `;
+        statsDiv.appendChild(row);
+    })
+
+    modal.classList.remove("hidden");
+    
+}
+
+export function setUpModal() {
+    document.getElementById("close-modal").addEventListener("click", () => {
+        document.getElementById("pokemon-modal").classList.add("hidden");
+    });
+
+}
+

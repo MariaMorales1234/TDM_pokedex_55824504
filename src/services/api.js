@@ -9,12 +9,22 @@ export async function fetchPokemon(id) {
         const data = await res.json();
 
         const types = data.types.map(t => t.type.name);
+        const abilities = data.abilities.map(a => a.ability.name);
+
+        const stats = data.stats.map(s => ({
+            stat: s.stat.name,
+            base: s.base_stat
+        })); 
 
         return new Pokemon(
             data.id,
             data.name,
             types,
-            data.sprites.other["official-artwork"].front_default
+            data.sprites.other["official-artwork"].front_default,
+            data.height,
+            data.weight,
+            abilities,
+            stats
         );
     }catch (error) {
         console.error(error);
