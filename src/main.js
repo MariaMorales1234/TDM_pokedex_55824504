@@ -1,5 +1,5 @@
 import { fetchPokemon } from "./services/api.js";
-import { showModal, setUpModal, showPokemon } from "./ui/ui.js";
+import { setUpModal, showPokemon } from "./ui/ui.js";
 
 let current = 677;
 

@@ -16,6 +16,8 @@ export async function fetchPokemon(id) {
             base: s.base_stat
         })); 
 
+        const cry = data.cries.latest;
+
         return new Pokemon(
             data.id,
             data.name,
@@ -24,7 +26,8 @@ export async function fetchPokemon(id) {
             data.height,
             data.weight,
             abilities,
-            stats
+            stats,
+            cry
         );
     }catch (error) {
         console.error(error);

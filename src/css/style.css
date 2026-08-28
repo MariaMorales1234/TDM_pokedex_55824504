@@ -139,3 +139,133 @@ body.type-dragon   { background: linear-gradient(180deg, #3f23bb 0%, #ffffff 100
 .button button:active {
     transform: translateY(0) scale(0.97);
 }
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 32px;
+    max-width: 420px;
+    width: 90%;
+    max-height: 90vh;
+    position: relative;
+    text-align: center;
+}
+
+#close-modal {
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    font-size: 32px;
+    font-weight: 700;
+    color: #000000;
+    cursor: pointer;
+    transition: colo 0.2s;
+}
+
+#close-modal:hover {
+    color: #545151;
+}
+
+#modal-img {
+    display: block;
+    width: 180px;
+    height: 180px;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+#modal-name {
+    font-size: 30px;
+    font-weight: 800;
+    text-transform: capitalize;
+    margin: 4px;
+}
+
+.pokemon-id {
+    font-size: 14px;
+    color: #000;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.modal-info {
+    background: #f5f5f5;
+    border-radius: 12px;
+    padding: 16px;
+    margin: 20px;
+    text-align: left;
+}
+
+.modal-info p {
+    margin: 6px 0;
+    font-size: 14px;
+    color: #444444;
+}
+
+.modal-info strong {
+    color: #000000;
+}
+
+.modal-stats h3 {
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #000000;
+    margin: 12px;
+}
+
+.stat-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.stat-label {
+    width: 90px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #555;
+    text-align: left;
+}
+
+.stat-bar {
+    flex: 1;
+    height: 14px;
+    background: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.stat-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg,rgba(65, 190, 240, 1) 0%, rgba(74, 224, 137, 1) 50%, rgba(255, 233, 31, 1) 100%);;
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+.stat-value {
+    width: 36px;
+    font-size: 13px;
+    font-weight: 800;
+    color: #333;
+    text-align: right;
+}

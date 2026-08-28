@@ -32,6 +32,9 @@ export function showPokemon (pokemon) {
     });
 
     document.querySelector("#pokemon-img").onclick = () => showModal(pokemon);
+
+    const audio = new Audio(pokemon.cry);
+    audio.play();
 }
 
 function capitalize(word) {
@@ -44,8 +47,8 @@ export function showModal(pokemon){
     document.getElementById("modal-name").textContent = capitalize(pokemon.name);
     document.getElementById("modal-img").src = pokemon.sprite;
     document.getElementById("modal-id").textContent = "#" + pokemon.id.toString().padStart(3, "0");
-    document.getElementById("modal-height").textContent = (pokemon.height / 10) + "m";
-    document.getElementById("modal-weight").textContent = (pokemon.weight / 10) + "kg";
+    document.getElementById("modal-height").textContent = (pokemon.height / 10) + " m";
+    document.getElementById("modal-weight").textContent = (pokemon.weight / 10) + " kg";
     document.getElementById("modal-abilities").textContent = pokemon.abilities.join(", ");
 
     const statsDiv = document.getElementById("modal-stats");
@@ -59,7 +62,7 @@ export function showModal(pokemon){
         row.className = "stat-row";
         row.innerHTML = `
             <span class="stat-label">${label}</span>
-            <div class="stat-bar-bg">
+            <div class="stat-bar">
                 <div class="stat-bar-fill" style="width: ${Math.min(value, 100)}%"></div>
             </div>
             <span class="stat-value">${value}</span>
@@ -68,7 +71,6 @@ export function showModal(pokemon){
     })
 
     modal.classList.remove("hidden");
-    
 }
 
 export function setUpModal() {
